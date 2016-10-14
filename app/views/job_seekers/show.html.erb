@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @job_seeker.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @job_seeker.password %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @job_seeker.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @job_seeker.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @job_seeker.email %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @job_seeker.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @job_seeker.city %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @job_seeker.bio %>
+</p>
+
+<p>
+  <strong>Portfolio:</strong>
+  <%= @job_seeker.portfolio %>
+</p>
+
+<p>
+  <strong>Social media:</strong>
+  <%= @job_seeker.social_media %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @job_seeker.rating %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @job_seeker.comments %>
+</p>
+
+<p>
+  <strong>Interests:</strong>
+  <%= @job_seeker.interests %>
+</p>
+
+<%= link_to 'Edit', edit_job_seeker_path(@job_seeker) %> |
+<%= link_to 'Back', job_seekers_path %>
