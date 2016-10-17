@@ -1,0 +1,2 @@
+json.extract! employer, :id, :first_name, :last_name, :email, :location, :bio, :company_name, :industy, :company_website, :city, :social_media_links, :created_at, :updated_at
+json.url employer_url(employer, format: :json)

@@ -69,6 +69,6 @@ class JobSeekersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_seeker_params
-      params.require(:job_seeker).permit(:username, :password, :first_name, :last_name, :email, :state, :city, :bio, :portfolio, :social_media, :rating, :comments, :interests)
+      params.require(:job_seeker).permit(:username, :password, :first_name, :last_name, :email, :state, :city, :bio, :portfolio, :social_media, :rating, :comments, :interests, :skills)
     end
 end

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  skills_needed_1: MyString
+  skills_needed_2: MyString
+  skills_needed_3: MyString
+  skills_needed_4: MyString
+  name: MyString
+  company: MyString
+  owner: MyString
+  desc: MyText
+
+two:
+  skills_needed_1: MyString
+  skills_needed_2: MyString
+  skills_needed_3: MyString
+  skills_needed_4: MyString
+  name: MyString
+  company: MyString
+  owner: MyString
+  desc: MyText

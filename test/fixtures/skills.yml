@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  skill_1: MyString
+  skill_2: MyString
+  skill_3: MyString
+  skill_4: MyString
+  skill_5: MyString
+  skill_6: MyString
+  skill_7: MyString
+  skill_8: MyString
+
+two:
+  skill_1: MyString
+  skill_2: MyString
+  skill_3: MyString
+  skill_4: MyString
+  skill_5: MyString
+  skill_6: MyString
+  skill_7: MyString
+  skill_8: MyString
