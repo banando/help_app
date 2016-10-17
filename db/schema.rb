@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017155040) do
+ActiveRecord::Schema.define(version: 20161017165124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20161017155040) do
     t.string   "social_media_links"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "job_id"
+    t.integer  "job_seeker_id"
   end
 
   create_table "job_seekers", force: :cascade do |t|
@@ -47,6 +49,8 @@ ActiveRecord::Schema.define(version: 20161017155040) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "skill_id"
+    t.integer  "job_id"
+    t.integer  "employer_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -60,22 +64,9 @@ ActiveRecord::Schema.define(version: 20161017155040) do
     t.text     "desc"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  end
-
-  create_table "models", force: :cascade do |t|
-    t.string   "employer"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "location"
-    t.text     "bio"
-    t.string   "company_name"
-    t.string   "industy"
-    t.string   "company_website"
-    t.string   "city"
-    t.string   "social_media_links"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "employer_id"
+    t.integer  "job_seeker_id"
+    t.integer  "skill_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -87,8 +78,10 @@ ActiveRecord::Schema.define(version: 20161017155040) do
     t.string   "skill_6"
     t.string   "skill_7"
     t.string   "skill_8"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "job_id"
+    t.integer  "job_seeker_id"
   end
 
 end
