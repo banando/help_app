@@ -69,6 +69,22 @@ ActiveRecord::Schema.define(version: 20161017165124) do
     t.integer  "skill_id"
   end
 
+  create_table "models", force: :cascade do |t|
+    t.string   "employer"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "location"
+    t.text     "bio"
+    t.string   "company_name"
+    t.string   "industy"
+    t.string   "company_website"
+    t.string   "city"
+    t.string   "social_media_links"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string   "skill_1"
     t.string   "skill_2"
