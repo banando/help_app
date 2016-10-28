@@ -25,6 +25,13 @@ class JobSeekersController < ApplicationController
   # POST /job_seekers.json
   def create
     @job_seeker = JobSeeker.new(job_seeker_params)
+    @job_seeker = DateTime.now
+    @job_seeker.save
+
+    if @job_seeker.save
+      @job_seeker.skills.create skills_params
+      re_direct_to_root_url
+    end
 
     respond_to do |format|
       if @job_seeker.save
@@ -71,4 +78,7 @@ class JobSeekersController < ApplicationController
     def job_seeker_params
       params.require(:job_seeker).permit(:username, :password, :first_name, :last_name, :email, :state, :city, :bio, :portfolio, :social_media, :rating, :comments, :interests, :skills)
     end
-end
+
+    def skills_params
+        params.require(:skills).permit(:skill_1, :skill_2, :skill_3, :skill_4)
+    end

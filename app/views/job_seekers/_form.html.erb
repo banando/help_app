@@ -77,9 +77,16 @@
   </div>
 
   <div class="field">
-    <%= f.label :skills %>
-    <%= f.text_field :skills %>
-
+    <%=fields_for :skills do |skills_field|%>
+    <%= f.label :skill_1 %>
+    <%= f.text_field :skills_1 %>
+    <%= f.label :skill_2 %>
+    <%= f.text_field :skills_2 %>
+    <%= f.label :skill_3 %>
+    <%= f.text_field :skills_3 %>
+    <%= f.label :skill_4 %>
+    <%= f.text_field :skills_4 %>
+    <%end%>
   </div>
 
   <div class="actions">
