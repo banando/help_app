@@ -24,7 +24,12 @@
     <div class="row">
     <nav class="navbar navbar-default navbar-fixed-top">
         <ul class="nav navbar-nav">
-          <li><a href="users/sign_in">Log-in/out</a></li>
+        <% if user_signed_in? %>
+        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+          <% else %>
+        <li><%= link_to('Login', new_user_session_path)  %></li>
+        <% end %>
+          <!-- <li><a href="users/sign_in">Log-in/out</a></li> -->
           <li><a href="">Jobs</a></li>
           <li><a href="">Employers</a></li>
           <li><a href="">Job Seekers</a></li>
