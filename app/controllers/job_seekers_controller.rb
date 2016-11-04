@@ -83,11 +83,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_seeker_params
-      params.require(:job_seeker).permit(:username, :password, :first_name, :last_name, :email, :state, :city, :bio, :portfolio, :social_media, :rating, :comments, :interests, :skill_id)
-    end
 
-    def skill_params
-        params.require(:skill).permit(:skill_1, :skill_2, :skill_3, :skill_4)
-        # params.permit(:skill_1, :skill_2, :skill_3, :skill_4)
-
+      params.require(:job_seeker).permit(:username, :password, :first_name, :last_name, :email, :state, :city, :bio, :portfolio, :social_media, :rating, :comments, :interests, :skills_id)
     end
