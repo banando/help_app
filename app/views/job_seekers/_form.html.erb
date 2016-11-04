@@ -1,3 +1,6 @@
+<%job_seeker = @job_seeker%>
+<%skill = @skill%>
+
 <%= form_for(job_seeker) do |f| %>
   <% if job_seeker.errors.any? %>
     <div id="error_explanation">
@@ -77,15 +80,15 @@
   </div>
 
   <div class="field">
-    <%=fields_for :skills do |skills_field|%>
+    <%= form_for(skill) do |f| %>
     <%= f.label :skill_1 %>
-    <%= f.text_field :skills_1 %>
+    <%= f.text_field :skill_1 %>
     <%= f.label :skill_2 %>
-    <%= f.text_field :skills_2 %>
+    <%= f.text_field :skill_2 %>
     <%= f.label :skill_3 %>
-    <%= f.text_field :skills_3 %>
+    <%= f.text_field :skill_3 %>
     <%= f.label :skill_4 %>
-    <%= f.text_field :skills_4 %>
+    <%= f.text_field :skill_4 %>
     <%end%>
   </div>
 
