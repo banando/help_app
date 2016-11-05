@@ -67,21 +67,22 @@
 
 <p>
   <strong>Skills:</strong>
-  <%= @job_seeker.skills %>
+  <%= @job_seeker.skill_id %>
 </p>
 
 <%= link_to 'Edit', edit_job_seeker_path(@job_seeker) %> |
 <%= link_to 'Back', job_seekers_path %>
-
-<% @job_seeker.comments.each do |comment| %>
-  <p>
-    <strong>Commenter</strong>
-    <%= comment.commenter %>
-  </p>
-  <p>
-    <strong>Comment</strong>
-    <%= comment.body %>
-  </p>
+<% if @job_seeker.comments.body %>
+  <% @job_seeker.comments.each do |comment| %>
+    <p>
+      <strong>Commenter</strong>
+      <%= comment.commenter %>
+    </p>
+    <p>
+      <strong>Comment</strong>
+      <%= comment.body %>
+    </p>
+  <% end %>
 <% end %>
 
 <h2>Add a Comment:</h2>
