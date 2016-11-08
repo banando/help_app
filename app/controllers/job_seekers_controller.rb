@@ -15,19 +15,17 @@ class JobSeekersController < ApplicationController
   # GET /job_seekers/new
   def new
     @job_seeker = JobSeeker.new
-    @skill = Skill.new
   end
 
   # GET /job_seekers/1/edit
   def edit
-  end
+    @job_seeker = Job_seeker.find(params[:id]
 
+end
   # POST /job_seekers
   # POST /job_seekers.json
   def create
     @job_seeker = JobSeeker.new(job_seeker_params)
-    @job_seeker = DateTime.now
-    @skill = Skill.new(skill_params)
     @job_seeker.save
 
     # if @job_seeker.save
@@ -37,7 +35,6 @@ class JobSeekersController < ApplicationController
 
     respond_to do |format|
       if @job_seeker.save
-        @job_seeker.skill.new(skill_params)
         format.html { redirect_to @job_seeker, notice: 'Job seeker was successfully created.' }
         format.json { render :show, status: :created, location: @job_seeker }
       else
@@ -45,7 +42,8 @@ class JobSeekersController < ApplicationController
         format.json { render json: @job_seeker.errors, status: :unprocessable_entity }
       end
     end
-  end
+end
+
 
   # PATCH/PUT /job_seekers/1
   # PATCH/PUT /job_seekers/1.json
@@ -60,6 +58,7 @@ class JobSeekersController < ApplicationController
       end
     end
   end
+
 
   # DELETE /job_seekers/1
   # DELETE /job_seekers/1.json
@@ -84,5 +83,7 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_seeker_params
 
-      params.require(:job_seeker).permit(:username, :password, :first_name, :last_name, :email, :state, :city, :bio, :portfolio, :social_media, :rating, :comments, :interests, :skills_id)
+      params.require(:job_seeker).permit(:username, :password, :first_name, :last_name, :email, :state, :city, :bio, :portfolio, :social_media, :rating, :comments, :interests, :id, :skills_id)
     end
+
+  end
