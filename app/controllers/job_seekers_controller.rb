@@ -10,6 +10,8 @@ class JobSeekersController < ApplicationController
   # GET /job_seekers/1
   # GET /job_seekers/1.json
   def show
+    @job_seeker = JobSeeker.find(params[:id])
+    @comments = Comment.where(job_seekers_id: @job_seeker.id)
   end
 
   # GET /job_seekers/new

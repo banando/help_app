@@ -72,8 +72,8 @@
 
 <%= link_to 'Edit', edit_job_seeker_path(@job_seeker) %> |
 <%= link_to 'Back', job_seekers_path %>
-<% if @job_seeker.comments.body %>
-  <% @job_seeker.comments.each do |comment| %>
+<% if @comments %>
+  <% @comments.each do |comment| %>
     <p>
       <strong>Commenter</strong>
       <%= comment.commenter %>
@@ -87,7 +87,7 @@
 
 <h2>Add a Comment:</h2>
 
-<%= form_for([@job_seeker, @job_seeker.comments.build]) do |f| %>
+<%= form_for([@job_seeker, @comment.build]) do |f| %>
   <p>
     <%= f.label :commenter %><br />
     <%= f.text_field :commenter %>
